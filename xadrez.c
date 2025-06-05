@@ -1,32 +1,149 @@
-#include <stdio.h>
-
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+#include<stdio.h>
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    //Variaveis usadas
+    int peca, lado, b = 0 , t , r = 0;
+    //Escolha da peça que sera mexida
+    printf("Escolha a peça que deseja mexer...\n");
+    printf("1 = Torre\n");
+    printf("2 = Bispo\n");
+    printf("3 = Rainha\n");
+    scanf("%d", &peca);
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    switch (peca)
+    {
+    case 1:// escolha para qual lado a torre ira mexer
+        printf("Escolha para qual lado...\n");
+        printf("1 = Frente\n");
+        printf("2 = Trás\n");
+        printf("3 = Direita\n");
+        printf("4 = Esquerda\n");
+        scanf("%d", &lado);
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+        if (lado == 1) {
+            for (t = 0; t < 5; t++) {
+                printf("Para frente\n");
+            }
+        } else if (lado == 2)
+      
+        {
+            for (t = 0; t < 5; t++) {
+                printf("Para trás\n");
+            }
+        } else if (lado == 3)
+        {
+            for (t = 0; t < 5; t++)
+            {
+                printf("Para a Direita\n");
+            }
+            
+        } else
+        {
+            for (t = 0; t < 5; t++)
+            {
+                printf("Para a Esquerda\n");
+            }
+            
+        }
+        
+        
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+        break;
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    case 2://Escolha para qual lado o bispo ira mexer
+        printf("Escolha pra qual lado...\n");
+        printf("1 = Diagonal para frente e para a esquerda\n");
+        printf("2 = Diagonal para frente e para a direita\n");
+        printf("3 = Diagonal para trás e para a esquerda\n");
+        printf("4 = Diagonal para trás e para a direita\n");
+        scanf("%d", &lado);
+
+        
+        if (lado == 1) {
+            do {
+                printf("Um para frente e um para esquerda\n");
+                b++;
+            } while (b < 5);
+        } else if (lado == 2)
+        {
+            b = 0;
+            do {
+                printf("Um para frente e um para direita\n");
+                b++;
+            } while (b < 5);
+        } else if (lado == 3)
+        {
+            do
+            {
+                b++;    
+                printf("Um para trás e um para a esquerda\n");
+            } while (b < 5);
+            
+        } else
+        {
+            do
+            {
+                b++;
+                printf("Um para trás e um para a direita\n");
+
+            } while (b < 5);
+            
+        }
+        
+        
+        break;
+
+    case 3://Escolha pra qual lado a rainha ira mexer
+        printf("Escolha pra qual lado...\n");
+        printf("1 = Diagonal para esquerda\n");
+        printf("2 = Diagonal para direita\n");
+        printf("3 = Esquerda\n");
+        printf("4 = Direita\n");
+        printf("5 = Para frente\n");
+        printf("6 = Para tras\n");
+        scanf("%d", &lado);
+
+        r = 0;
+        if (lado == 1) {
+            while (r < 5) {
+                printf("Um para frente e um para esquerda\n");
+                r++;
+            }
+        } else if (lado == 2) {
+            while (r < 5) {
+                printf("Um para frente e um para direita\n");
+                r++;
+            }
+        } else if (lado == 3) {
+            while (r < 5) {
+                printf("Esquerda\n");
+                r++;
+            }
+        } else if (lado == 4) {
+            while (r < 5) {
+                printf("Direita\n");
+                r++;
+            }
+        } else if (lado == 5) {
+            while (r < 5) {
+                printf("Para frente\n");
+                r++;
+            }
+        } else if (lado == 6) {
+            while (r < 5) {
+                printf("Para trás\n");
+                r++;
+            }
+        } else {
+            printf("Lado inválido!\n");
+        }
+        break;
+        default;//caso a nenhuma peca dessa 3 for escolhida
+        printf("Peça não implementada.\n");
+        break;
+    }
 
     return 0;
-}
+} 
